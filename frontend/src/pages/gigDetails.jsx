@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API from '../api/instance.js';
 
 const GigDetails = () => {
     const { gigId } = useParams();
@@ -75,10 +76,14 @@ const GigDetails = () => {
     };
     if (!gig) return <div className="p-10 text-center">Loading...</div>;
 
+
+
+
     return (
         <div className="max-w-5xl mx-auto p-6 bg-gray-50 min-h-screen">
             <button onClick={() => navigate(-1)} className="mb-6 text-emerald-600 font-bold flex items-center gap-2">← Back</button>
-
+           
+            
             {/* GIG HEADER */}
             <div className="bg-white rounded-2xl shadow-sm border p-8 mb-8">
                 <div className="flex justify-between items-start mb-6">
@@ -98,7 +103,12 @@ const GigDetails = () => {
                     <div>
                         <p className="font-bold text-gray-900">{gig.owner?.name || "Client"}</p>
                         <p className="text-xs text-gray-400">Posted on {new Date(gig.createdAt).toLocaleDateString()}</p>
+                        <br></br>
+                        
                     </div>
+                  
+
+                
                 </div>
             </div>
 

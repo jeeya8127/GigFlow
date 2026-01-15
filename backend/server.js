@@ -19,8 +19,8 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(cookieParser());
-app.use('/api/gigs', gigRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/gigs', gigRoutes);
 app.use('/api/bids', bidRoutes);
 const server = http.createServer(app); 
 const io = new Server(server, {
